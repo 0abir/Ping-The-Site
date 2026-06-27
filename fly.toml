@@ -7,7 +7,7 @@ primary_region = "sin"     # Singapore — closest to BD. Other options: bom (Mu
 [build]
   # Fly will auto-detect Node.js and use its built-in Node builder.
   # If you have a Dockerfile, comment the line above and use:
-  # dockerfile = "Dockerfile"
+  dockerfile = "Dockerfile"
 
 [env]
   NODE_ENV = "production"
@@ -28,5 +28,3 @@ primary_region = "sin"     # Singapore — closest to BD. Other options: bom (Mu
 [[vm]]
   size   = "shared-cpu-1x"
   memory = "256mb"           # bump to 512mb if app is memory-hungry
-[build]
-  dockerfile = "Dockerfile"
