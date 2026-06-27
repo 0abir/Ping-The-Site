@@ -11,10 +11,10 @@ primary_region = "sin"     # Singapore — closest to BD. Other options: bom (Mu
 
 [env]
   NODE_ENV = "production"
-  PORT     = "3000"
+  PORT     = "8080"
 
 [http_service]
-  internal_port        = 3000   # must match PORT above
+  internal_port        = 8080   # must match PORT above
   force_https          = true
   auto_stop_machines   = "stop"   # stops machine when idle → saves cost
   auto_start_machines  = true     # wakes it back up on first request
