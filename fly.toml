@@ -1,0 +1,30 @@
+# fly.toml — simple Node.js app deployer
+# https://fly.io/docs/reference/configuration/
+
+app = "my-node-app"        # change to your app name (must be globally unique)
+primary_region = "sin"     # Singapore — closest to BD. Other options: bom (Mumbai)
+
+[build]
+  # Fly will auto-detect Node.js and use its built-in Node builder.
+  # If you have a Dockerfile, comment the line above and use:
+  # dockerfile = "Dockerfile"
+
+[env]
+  NODE_ENV = "production"
+  PORT     = "3000"
+
+[http_service]
+  internal_port        = 3000   # must match PORT above
+  force_https          = true
+  auto_stop_machines   = "stop"   # stops machine when idle → saves cost
+  auto_start_machines  = true     # wakes it back up on first request
+  min_machines_running = 0        # 0 = full scale-to-zero (cheapest)
+
+  [http_service.concurrency]
+    type       = "connections"
+    hard_limit = 25
+    soft_limit = 20
+
+[[vm]]
+  size   = "shared-cpu-1x"
+  memory = "256mb"           # bump to 512mb if app is memory-hungry
