@@ -28,3 +28,5 @@ primary_region = "sin"     # Singapore — closest to BD. Other options: bom (Mu
 [[vm]]
   size   = "shared-cpu-1x"
   memory = "256mb"           # bump to 512mb if app is memory-hungry
+[build]
+  dockerfile = "Dockerfile"
