@@ -4,5 +4,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.4"
   }
 }
